@@ -1,0 +1,16 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Dependency directories
+node_modules/
+
+# dotenv environment variable files
+.env
+
+# cypress
+# giiignore rules: https://www.w3schools.com/git/git_ignore.asp?remote=github
+cypress/reports
+cypress/screenshots
+cypress/videos

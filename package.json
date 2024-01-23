@@ -1,0 +1,35 @@
+{
+   "name": "pageobjectmodel-cucumber",
+   "version": "1.0.0",
+   "description": "",
+   "main": "index.js",
+   "scripts": {
+      "cy:open": "cypress open"
+   },
+   "keywords": [
+      "Cypress",
+      "BDD",
+      "Cucumber"
+   ],
+   "author": "Cesar Gaudin",
+   "license": "ISC",
+   "devDependencies": {
+      "@types/cypress-cucumber-preprocessor": "^4.0.5",
+      "cypress": "^13.6.3",
+      "cypress-cucumber-preprocessor": "^4.3.1",
+      "cypress-mochawesome-reporter": "^3.8.0",
+      "cypress-on-fix": "^1.0.2",
+      "multiple-cucumber-html-reporter": "^3.6.1",
+      "typescript": "^5.3.3"
+   },
+   "cypress-cucumber-preprocessor": {
+      "cucumberJson": {
+         "generate": true,
+         "outputFolder": "cypress/cucumber-json",
+         "filePrefix": "",
+         "fileSuffix": ".cucumber"
+      },
+      "nonGlobalStepDefinition": false,
+      "step_definitions": "cypress/e2e/"
+   }
+}
