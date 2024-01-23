@@ -1,0 +1,29 @@
+from cypress.config.js
+
+const { defineConfig } = require('cypress');
+const cucumber = require('cypress-cucumber-preprocessor').default;
+
+module.exports = defineConfig({
+   reporter: 'mochawesome',
+   reporterOptions: {
+      charts: true,
+      reportFilename: 'HRMLogin_[status]_[datetime]-report',
+      timestamp: 'longDate',
+      reportPageTitle: 'Login HRM Website',
+      ebeddedScreenshots: true,
+      inlineAssets: true,
+      saveAllAttempts: false,
+      saveHTML: true,
+   },
+   video: true,
+   retries: 1,
+   e2e: {
+      baseUrl: 'https://jsonplaceholder.typicode.com',
+      specPattern: 'cypress/e2e/**/*.feature',
+      setupNodeEvents(on, config) {
+         require('cypress-mochawesome-reporter/plugin');
+         on('file:preprocessor', cucumber());
+         // implement node event listeners here
+      },
+   },
+});
